@@ -1,12 +1,15 @@
 package com.romkudev.api.item.domain;
 
 import com.romkudev.api.order.domain.Order;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Entity
 @Data
 @Table(name = "items")
@@ -35,4 +38,16 @@ public class Item {
 
     @OneToMany(mappedBy = "item")
     private List<Order> orders = new ArrayList<>();
+
+    @Builder
+    public Item(String itemBrand, String itemName, String itemColor) {
+        this.itemBrand = itemBrand;
+        this.itemName = itemName;
+        this.itemColor = itemColor;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("아이템 스펙 : %s, %s, %s ", itemBrand, itemName, itemColor);
+    }
 }
