@@ -8,18 +8,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ItemApplication implements CommandLineRunner {
+public class ItemApplication {
 
-//	@Autowired ItemService itemService;
+	//@Autowired ItemService itemService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ItemApplication.class, args);
 	}
 
-
+	/* // implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception {
-		/*
+
 		itemService.deleteAll();
 		itemService.save(new Item("삼성", "갤럭시", "흑색"));
 		itemService.save(new Item("애플", "아이폰", "흰색"));
@@ -27,6 +27,6 @@ public class ItemApplication implements CommandLineRunner {
 		for (Item i : itemService.findAll()) {
 			System.out.println(i.toString());
 		}
-		*/
 	}
+	 */
 }
