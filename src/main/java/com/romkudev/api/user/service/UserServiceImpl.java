@@ -2,6 +2,7 @@ package com.romkudev.api.user.service;
 
 import com.romkudev.api.user.domain.User;
 import com.romkudev.api.user.repository.UserRepository;
+import com.romkudev.api.util.Proxy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +11,13 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends Proxy implements UserService {
 
     private final UserRepository userRepository;
 
     @Override
     public List<User> findAll() {
+//        int result = intMax.apply(5, 7); // Proxy를 상속받음
         return userRepository.findAll();
     }
 
