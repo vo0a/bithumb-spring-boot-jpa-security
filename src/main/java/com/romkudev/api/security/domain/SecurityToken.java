@@ -19,12 +19,12 @@ public class SecurityToken {
     }
 
     private String createToken() {
-        try{
-            Map<String,Object> headers = new HashMap<>();
-            headers.put("alg","ES256");
-            headers.put("typ","JWT");
+        try {
+            Map<String, Object> headers = new HashMap<>();
+            headers.put("alg", "ES256");
+            headers.put("typ", "JWT");
 
-            Map<String,Object> payload = new HashMap<>();
+            Map<String, Object> payload = new HashMap<>();
             payload.put("data", "dummy");
 
             long expirationTime = 1000 * 6L * 2L;
@@ -39,17 +39,18 @@ public class SecurityToken {
                     .setExpiration(ext)
                     .signWith(SignatureAlgorithm.ES256, key.getBytes())
                     .compact();
-        }catch (SecurityException e){
+        } catch (SecurityException e) {
             log.info("SecurityException JWT");
-        }catch (MalformedJwtException e){
+        } catch (MalformedJwtException e) {
             log.info("MalformedJwtException JWT");
-        }catch (ExpiredJwtException e){
+        } catch (ExpiredJwtException e) {
             log.info("ExpiredJwtException JWT");
-        }catch (UnsupportedJwtException e){
+        } catch (UnsupportedJwtException e) {
             log.info("UnsupportedJwtException JWT");
-        }catch (IllegalAccessError e){
+        } catch (IllegalAccessError e) {
             log.info("IllegalAccessError JWT");
-        }return null;
+        }
+        return null;
     }
 
 

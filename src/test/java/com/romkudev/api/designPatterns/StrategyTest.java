@@ -31,6 +31,7 @@ class Stock {
     private final double price;
     private final double units;
 }
+
 class StockFilters {
     static List<Stock> filter(List<Stock> list, Predicate<Stock> predicate) {
         List<Stock> filteredData = new ArrayList<>();

@@ -10,11 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ItemApplication {
 
-	//@Autowired ItemService itemService;
+    //@Autowired ItemService itemService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(ItemApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ItemApplication.class, args);
+    }
 
 	/* // implements CommandLineRunner
 	@Override

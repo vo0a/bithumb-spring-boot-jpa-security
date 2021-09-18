@@ -4,25 +4,32 @@ import java.util.function.Supplier;
 
 public class FactorMethodTest {
 }
-interface  Flooring{void installation();}
-class ConcreteFlooring implements Flooring{
+
+interface Flooring {
+    void installation();
+}
+
+class ConcreteFlooring implements Flooring {
     @Override
     public void installation() {
         System.out.println("컨크리트 바닥 시공됨");
     }
 }
-class CorkFlooring implements Flooring{
+
+class CorkFlooring implements Flooring {
     @Override
     public void installation() {
         System.out.println("코크 바닥 시공됨");
     }
 }
+
 class WoodenFlooring implements Flooring {
     @Override
     public void installation() {
         System.out.println("목재 바닥 시공됨");
     }
 }
+
 class FlooringFactory {
     static Flooring getFlooring(int min, int max) {
         Supplier<Flooring> flooring;
